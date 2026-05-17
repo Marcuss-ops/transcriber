@@ -43,7 +43,7 @@
     "appId": "com.trascrizione.audio",
     "productName": "Trascrizione Audio",
     "directories": {
-      "output": "release-build"
+      "output": "release-output"
     },
     "asarUnpack": [
       "**/node_modules/ffmpeg-static/**/*",

@@ -41,7 +41,11 @@ function initWhisper() {
   }
   
   const baseDir = app.isPackaged ? process.resourcesPath : process.cwd()
-  const modelPath = path.join(baseDir, 'models', 'ggml-tiny.bin')
+  let modelPath = path.join(baseDir, 'models', 'ggml-base.bin')
+  
+  if (!fs.existsSync(modelPath)) {
+    modelPath = path.join(baseDir, 'models', 'ggml-tiny.bin')
+  }
   
   if (!fs.existsSync(modelPath)) {
     throw new Error(`Model file not found at: ${modelPath}`)
@@ -136,6 +140,7 @@ async function processChunk(filePath: string, start: number, duration: number, i
     
     const result = await whisperEngine.transcribe(tempChunkPath, {
       language: language,
+      translate: false,
       use_gpu: false
     })
 
