@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#54647a",
+                    "surface-bright": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed": "#271901",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "on-background": "#191c1e",
+                    "on-secondary-fixed": "#0b1c30",
+                    "primary-fixed-dim": "#bec6e0",
+                    "primary": "#000000",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-container": "#271901",
+                    "surface-tint": "#565e74",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#bec6e0",
+                    "outline-variant": "#c6c6cd",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-surface": "#191c1e",
+                    "secondary-container": "#d0e1fb",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-dim": "#d8dadc",
+                    "primary-container": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f7f9fb",
+                    "secondary": "#505f76",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-container-high": "#e6e8ea",
+                    "error": "#ba1a1a",
+                    "outline": "#76777d",
+                    "tertiary": "#000000",
+                    "tertiary-fixed": "#fcdeb5",
+                    "inverse-surface": "#2d3133",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed": "#d3e4fe",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-tertiary-container": "#98805d",
+                    "on-tertiary-fixed-variant": "#574425"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "container-max": "1100px",
+                    "xl": "64px",
+                    "sm": "12px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "title-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #F8FAFC;
+        }
+        .waveform-bar {
+            width: 3px;
+            margin-right: 1px;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface flex flex-col items-center justify-center min-h-screen p-md">
+<!-- Installer Container -->
+<main class="w-full max-w-[1100px] bg-white border border-outline-variant shadow-lg rounded-lg overflow-hidden flex flex-col h-[800px]">
+<!-- Top App Bar / Window Header -->
+<header class="bg-surface-bright dark:bg-surface-dim flex justify-between items-center h-16 px-md w-full border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-sm">
+<span class="font-display-lg text-display-lg text-primary dark:text-on-primary-fixed">TranscribePro</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex gap-4 items-center mr-md">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-surface-container-low transition-colors p-1 rounded">settings</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-surface-container-low transition-colors p-1 rounded">help_outline</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:bg-surface-container-low transition-colors p-1 rounded">account_circle</span>
+</div>
+<!-- Window Controls -->
+<div class="flex items-center gap-xs ml-md">
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-error opacity-80"></div>
+</div>
+</div>
+</header>
+<!-- Main Body: 2 Columns -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Column: Sidebar / Audio Zone -->
+<aside class="w-64 md:w-80 border-r border-outline-variant bg-surface-container-low flex flex-col">
+<div class="p-md flex flex-col h-full space-y-md">
+<!-- Drag & Drop Area -->
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-md flex flex-col items-center justify-center text-center space-y-sm bg-white hover:bg-surface-container-lowest transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[48px]">upload_file</span>
+<div>
+<p class="font-title-sm text-title-sm text-primary">Upload Audio</p>
+<p class="font-body-sm text-body-sm text-secondary">MP3, WAV, or AAC</p>
+</div>
+</div>
+<!-- Audio File Info -->
+<div class="space-y-xs">
+<p class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Current File</p>
+<div class="bg-white p-sm border border-outline-variant rounded-lg">
+<p class="font-title-sm text-title-sm truncate text-primary">interview_session_04.wav</p>
+<div class="flex justify-between mt-xs">
+<span class="font-body-sm text-body-sm text-secondary">24.5 MB</span>
+<span class="font-body-sm text-body-sm text-secondary">12:45</span>
+</div>
+</div>
+</div>
+<!-- Waveform Placeholder -->
+<div class="flex-1 flex flex-col justify-end">
+<p class="font-label-caps text-label-caps text-secondary mb-sm uppercase tracking-wider">Playback</p>
+<div class="h-32 bg-surface-container-high rounded-lg flex items-center justify-center px-sm gap-[1px]">
+<!-- Generating a mock waveform with CSS bars -->
+<div class="waveform-bar bg-secondary h-[20%]"></div>
+<div class="waveform-bar bg-secondary h-[40%]"></div>
+<div class="waveform-bar bg-secondary h-[70%]"></div>
+<div class="waveform-bar bg-primary h-[85%]"></div>
+<div class="waveform-bar bg-primary h-[60%]"></div>
+<div class="waveform-bar bg-primary h-[95%]"></div>
+<div class="waveform-bar bg-primary h-[40%]"></div>
+<div class="waveform-bar bg-primary h-[70%]"></div>
+<div class="waveform-bar bg-primary h-[50%]"></div>
+<div class="waveform-bar bg-outline h-[30%]"></div>
+<div class="waveform-bar bg-outline h-[60%]"></div>
+<div class="waveform-bar bg-outline h-[20%]"></div>
+<div class="waveform-bar bg-outline h-[45%]"></div>
+<div class="waveform-bar bg-outline h-[80%]"></div>
+<div class="waveform-bar bg-outline h-[35%]"></div>
+<div class="waveform-bar bg-outline h-[50%]"></div>
+<div class="waveform-bar bg-outline h-[15%]"></div>
+</div>
+<!-- Progress Bar -->
+<div class="mt-md">
+<div class="w-full h-1 bg-outline-variant mb-xs">
+<div class="bg-primary h-full w-[42%]"></div>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm text-secondary">
+<span>05:22</span>
+<span>12:45</span>
+</div>
+</div>
+<!-- Playback Controls -->
+<div class="flex justify-center items-center gap-md mt-md pb-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">skip_previous</button>
+<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[32px]">play_arrow</span>
+</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">skip_next</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Transcript Panel -->
+<section class="flex-1 flex flex-col bg-white">
+<!-- Panel Header -->
+<header class="h-16 px-md flex items-center justify-between border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">description</span>
+<h2 class="font-headline-md text-headline-md text-primary">Transcript</h2>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-xs px-sm py-xs border border-outline-variant rounded-md font-body-sm text-body-sm text-secondary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                            Clear
+                        </button>
+<button class="flex items-center gap-xs px-sm py-xs border border-outline-variant rounded-md font-body-sm text-body-sm text-secondary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Export
+                        </button>
+<button class="flex items-center gap-xs px-md py-xs bg-primary text-on-primary rounded-md font-body-sm text-body-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+                            Copy to Clipboard
+                        </button>
+</div>
+</header>
+<!-- Transcription Text Area -->
+<div class="flex-1 overflow-y-auto p-md space-y-lg bg-surface-bright/50">
+<!-- Speaker Segment -->
+<div class="flex gap-md">
+<div class="w-24 shrink-0 flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded">00:00:12</span>
+<span class="font-label-caps text-label-caps text-secondary mt-1 uppercase">Speaker 1</span>
+</div>
+<div class="flex-1 bg-white p-md rounded-lg border border-outline-variant shadow-sm">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                Alright, let's get started. We're here today to discuss the roadmap for Project Alpha. I've invited Sarah from the design team to give us an overview of the new high-fidelity utility interfaces we're aiming for. Sarah, do you want to start by showing us the latest wireframes?
+                            </p>
+</div>
+</div>
+<!-- Speaker Segment -->
+<div class="flex gap-md">
+<div class="w-24 shrink-0 flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded">00:01:45</span>
+<span class="font-label-caps text-label-caps text-secondary mt-1 uppercase">Speaker 2</span>
+</div>
+<div class="flex-1 bg-white p-md rounded-lg border border-outline-variant shadow-sm">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                Thanks, John. Absolutely. So, the main goal for this version is what we're calling 'Industrial Precision.' We want the user to feel like they are working with a professional-grade tool. We've moved away from the softer, rounded aesthetics of previous iterations and focused on sharp, 8px grid alignments. You can see the transcription area here is designed for maximum vertical density.
+                            </p>
+</div>
+</div>
+<!-- Speaker Segment -->
+<div class="flex gap-md">
+<div class="w-24 shrink-0 flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded">00:03:22</span>
+<span class="font-label-caps text-label-caps text-secondary mt-1 uppercase">Speaker 1</span>
+</div>
+<div class="flex-1 bg-white p-md rounded-lg border border-outline-variant shadow-sm ring-2 ring-primary ring-offset-2">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                That looks great. I noticed the waveform visualizer in the sidebar as well. Will that be real-time as the audio plays back, or is it pre-rendered? I think the technical appearance of the bars really fits the 'installer' aesthetic we're going for.
+                            </p>
+</div>
+</div>
+<!-- Speaker Segment -->
+<div class="flex gap-md">
+<div class="w-24 shrink-0 flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded">00:05:10</span>
+<span class="font-label-caps text-label-caps text-secondary mt-1 uppercase">Speaker 2</span>
+</div>
+<div class="flex-1 bg-white p-md rounded-lg border border-outline-variant shadow-sm">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed italic opacity-70">
+                                (Writing sound...) Yes, it's pre-rendered for performance, but the 'played' portion will fill with the accent color dynamically. We're also ensuring the copy-to-clipboard functionality is the primary action at all times to improve user workflow.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Status Footer -->
+<footer class="h-10 px-md bg-surface-container-low border-t border-outline-variant flex items-center justify-between font-label-caps text-label-caps text-secondary uppercase tracking-widest">
+<div class="flex gap-md">
+<span>Status: Processing Complete</span>
+<span>Confidence: 98.4%</span>
+</div>
+<div>
+<span>English (United States)</span>
+</div>
+</footer>
+</section>
+</div>
+</main>
+<!-- Side Decoration / Brand Presence -->
+<div class="mt-lg text-center max-w-2xl">
+<p class="font-body-sm text-body-sm text-secondary opacity-60">
+            TranscribePro v2.4.1 Build 2023.10.12. Designed for professional workflows with industrial-grade precision.
+        </p>
+</div>
+</body></html>

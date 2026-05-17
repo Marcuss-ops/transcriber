@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-electron/
+release/
+release-build/
+models/
+*.log
+.DS_Store
+.vscode/
